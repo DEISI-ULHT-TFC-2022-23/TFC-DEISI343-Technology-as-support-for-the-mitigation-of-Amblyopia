@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StringTextTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StringTextTable
+  m_TableCollectionNameGuidString: b4a675a0e04602b45865dba09b87be69
+  m_Entries:
+  - m_Id: 10230222848
+    m_Key: SPLASH_TEXT_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 418159841280
+    m_Key: SPLASH_TEXT_ACTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35312982347776
+    m_Key: SET_AMBLIOPIC_EYE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37687675637760
+    m_Key: LEFT_EYE_BUTTON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37701797859328
+    m_Key: RIGHT_EYE_BUTTON
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5948743361285062682
+  references:
+    version: 2
+    RefIds:
+    - rid: 5948743361285062682
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1677511349854
