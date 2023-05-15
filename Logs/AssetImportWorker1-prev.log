@@ -15,7 +15,7 @@ C:/dev/Opto343
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-50377
+52528
 Successfully changed project path to: C:/dev/Opto343
 C:/dev/Opto343
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/dev/Opto343
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8600] Host "[IP] 169.254.68.85 [Port] 0 [Flags] 2 [Guid] 2201262835 [EditorId] 2201262835 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-DSPEDOA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [21448] Host "[IP] 169.254.68.85 [Port] 0 [Flags] 2 [Guid] 4130777064 [EditorId] 4130777064 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-DSPEDOA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8600] Host "[IP] 169.254.68.85 [Port] 0 [Flags] 2 [Guid] 2201262835 [EditorId] 2201262835 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-DSPEDOA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21448] Host "[IP] 169.254.68.85 [Port] 0 [Flags] 2 [Guid] 4130777064 [EditorId] 4130777064 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-DSPEDOA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 207.54 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 160.46 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.18f1 (3129e69bc0c7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/Resources/UnitySubsystems
@@ -67,55 +67,55 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56360
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56780
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.014398 seconds.
+Registered in 0.015090 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 [usbmuxd] Send listen message
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 524 ms
+Android Extension - Scanning For ADB Devices 515 ms
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 180.44 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 142.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.656 seconds
+- Completed reload, in  1.630 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1657ms)
-		BeginReloadAssembly (130ms)
+	ReloadAssembly (1631ms)
+		BeginReloadAssembly (121ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (1348ms)
-			LoadAssemblies (127ms)
+		EndReloadAssembly (1329ms)
+			LoadAssemblies (118ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (176ms)
+			SetupTypeCache (181ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (1046ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (1021ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (663ms)
+				InitializePlatformSupportModulesInManaged (661ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (181ms)
+				RefreshPlugins (143ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (136ms)
-				ProcessInitializeOnLoadMethodAttributes (64ms)
+				ProcessInitializeOnLoadAttributes (139ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.013151 seconds.
+Registered in 0.010743 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\dev\Opto343\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\dev\Opto343\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -123,46 +123,46 @@ Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 130.55 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 156.26 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.007 seconds
+- Completed reload, in  2.315 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2008ms)
-		BeginReloadAssembly (182ms)
+	ReloadAssembly (2317ms)
+		BeginReloadAssembly (212ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (1650ms)
-			LoadAssemblies (155ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (1876ms)
+			LoadAssemblies (178ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (529ms)
+			SetupTypeCache (602ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (84ms)
-			SetupLoadedEditorAssemblies (802ms)
+			RebuildScriptCaches (99ms)
+			SetupLoadedEditorAssemblies (909ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (35ms)
+				InitializePlatformSupportModulesInManaged (46ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (131ms)
-				BeforeProcessingInitializeOnLoad (140ms)
-				ProcessInitializeOnLoadAttributes (367ms)
-				ProcessInitializeOnLoadMethodAttributes (118ms)
-				AfterProcessingInitializeOnLoad (12ms)
+				RefreshPlugins (156ms)
+				BeforeProcessingInitializeOnLoad (156ms)
+				ProcessInitializeOnLoadAttributes (503ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (14ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 1.29 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.98 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4443 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 31 unused Assets / (114.4 KB). Loaded Objects now: 4905.
+Unloading 31 unused Assets / (114.3 KB). Loaded Objects now: 4905.
 Memory consumption went from 155.9 MB to 155.8 MB.
-Total: 7.147900 ms (FindLiveObjects: 0.546300 ms CreateObjectMapping: 0.511300 ms MarkObjects: 5.775900 ms  DeleteObjects: 0.312600 ms)
+Total: 5.973700 ms (FindLiveObjects: 0.467000 ms CreateObjectMapping: 0.514900 ms MarkObjects: 4.834600 ms  DeleteObjects: 0.155900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -175,31 +175,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 6058.008708 seconds.
-  path: Assets/Localization/Localization Settings.asset
-  artifactKey: Guid(367051b4b221e054bbad813066c0545b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Localization/Localization Settings.asset using Guid(367051b4b221e054bbad813066c0545b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af30d0303dd94ad0b538b5267d493dad') in 0.072934 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.963013 seconds.
-  path: Assets/Localization/Locales/Portuguese (Brazil) (pt-BR).asset
-  artifactKey: Guid(9e25956767ff8ac4281c5579084dbbd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Localization/Locales/Portuguese (Brazil) (pt-BR).asset using Guid(9e25956767ff8ac4281c5579084dbbd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '332a16ddb29aa4436c07655f849f0639') in 0.007021 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Localization/Locales/Portuguese (pt).asset
-  artifactKey: Guid(86e80ded40e742649b18ae8f3f9b27d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Localization/Locales/Portuguese (pt).asset using Guid(86e80ded40e742649b18ae8f3f9b27d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '658f778e076daaaaf4883fe13a9c3fe2') in 0.006911 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Localization/Locales/Portuguese (Portugal) (pt-PT).asset
-  artifactKey: Guid(dbe9d54327feb6b48b9eeb9401138b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Localization/Locales/Portuguese (Portugal) (pt-PT).asset using Guid(dbe9d54327feb6b48b9eeb9401138b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '171da8cd11b51951210721fab423f13e') in 0.005063 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000070 seconds.
-  path: Assets/Localization/Locales/Spanish (es).asset
-  artifactKey: Guid(89fe590c65b556040b98e9032018c4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Localization/Locales/Spanish (es).asset using Guid(89fe590c65b556040b98e9032018c4c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6d609c22e6f7b1f991106df6b05ad96') in 0.004422 seconds 
+  Time since last request: 10047.725980 seconds.
+  path: Assets/Scenes/01 - SelectAmbEye.unity
+  artifactKey: Guid(2ff2a68a9773b5b4b91a726744f14673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/01 - SelectAmbEye.unity using Guid(2ff2a68a9773b5b4b91a726744f14673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebbf97221ce9c84ba8f36e29b8efa5d2') in 0.020431 seconds 

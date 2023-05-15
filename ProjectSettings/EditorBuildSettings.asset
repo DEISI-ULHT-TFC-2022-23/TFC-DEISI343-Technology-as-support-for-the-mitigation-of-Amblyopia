@@ -4,7 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/00 - Splah.unity
+    guid: 3aa5de94d7d33ff4fa7afe13f95458f3
+  - enabled: 1
+    path: Assets/Scenes/01 - SelectAmbEye.unity
+    guid: 2ff2a68a9773b5b4b91a726744f14673
+  - enabled: 1
+    path: Assets/Scenes/Level 01 - Bars.unity
+    guid: 2bdc10d8a7806d44d84dcd2b67cdb986
+  - enabled: 1
+    path: Assets/Scenes/Level 02 - FitObjects.unity
+    guid: 3296db95652eb194b8f047bcdd8ed8dd
+  - enabled: 1
+    path: Assets/Scenes/Level 10 - Tetris.unity
+    guid: 505e9f4b778102741ac7eb07b106c23a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 2e3727427926daa4abaae4e6185d55df, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 367051b4b221e054bbad813066c0545b, type: 2}
