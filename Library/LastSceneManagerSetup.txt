@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Level 22 - Rocket FlyUnder & Moving.unity
+- path: Assets/Scenes/Level 03 - Join Objects.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

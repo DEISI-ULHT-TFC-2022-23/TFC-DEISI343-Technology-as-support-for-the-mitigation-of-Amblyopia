@@ -20,7 +20,10 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
     public enum MovementType    { Default       , IntegerSteps                          }
     public enum ProjectionType  { Perspective   , Orthogonal                            }
 
-    const int ERROR_CODE_NO_SCENE_TYPE                  = 101 ;
+    public const int ERROR_CODE_NO_SCENE_TYPE           = 101 ;
+    public const int ERROR_CODE_PIECES_IDENTIFICATION   = 201 ;
+
+    public const string TAGS_SCENE_ENVIRONMENT_VARS     = "SceneEnvironmentVars";
 
     // global data definition
     public static int currentScene                      = 0 ;                   // current scene's build index
@@ -34,8 +37,8 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
     public const int CullingMaskWeakerEyeLayerBit       = 11 ;                  // bitwize value of weaker   eye's layer
     public const int CullingMaskDefaultLayerBit         =  0 ;                  // bitwize value of default  eye's layer
 
-    public const int CullingMaskDominantEye             =  (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskDominantEyeLayerBit)  ; // Dominant Eye's culling mask
-    public const int CullingMaskWeakerEye               =  (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskWeakerEyeLayerBit)    ; // Weaker Eye's culling mask
+    public const int CullingMaskDominantEye             = (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskDominantEyeLayerBit)  ; // Dominant Eye's culling mask
+    public const int CullingMaskWeakerEye               = (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskWeakerEyeLayerBit)    ; // Weaker Eye's culling mask
 
     private static bool[] updateCullingMaskRequired     = {false, false};
 
@@ -62,15 +65,28 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
 
     public static int GetCullingMask(Side side, Side eye)
     {
-        /* XOR  0 0 = 0  Weak
-                0 1 = 1  Dominant
-                1 0 = 1  Dominant
+        /* XOR  0 0 = 0  weak
+                0 1 = 1  dominant
+                1 0 = 1  dominant
                 1 1 = 0  weak */
 
         if ( (int)side == 0 ^ (int)eye == 0){                                   
-            return CullingMaskDominantEye;                                      // 0 0 and 1 1 return weak eye
+            return CullingMaskDominantEye;                                      // 0 0 and 1 1 return dominant eye
         } else {
             return CullingMaskWeakerEye;                                        // 0 1 and 1 0 return weak eye
+        }
+    }
+
+    public static int GetCullingLayerMask( Side side, Side eye){
+        /* XOR  0 0 = 0  weak
+                0 1 = 1  dominant
+                1 0 = 1  dominant
+                1 1 = 0  weak */
+
+        if ( (int)side == 0 ^ (int)eye == 0){                                   
+            return CullingMaskDominantEyeLayerBit   ;                           // 0 0 and 1 1 return weak eye
+        } else {
+            return CullingMaskWeakerEyeLayerBit     ;                           // 0 1 and 1 0 return dominant eye
         }
     }
 
@@ -96,7 +112,6 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
     }
 
 
-
     /* TODO define a error messaging layout */
     /*
         Function to handleand control errors normalization
@@ -108,22 +123,23 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
         switch (errorType)
         {
             case ErrorType.Warning      : 
-                Debug.Log("Warning: ${errorCode}: ${errorMsg}");
+                Debug.Log($"Warning: {errorCode}: {errorMsg}");
                 break;
             
             case ErrorType.Actionable   :
-                Debug.Log("Actionable: ${errorCode}: ${errorMsg}");
+                Debug.Log($"Actionable: {errorCode}: {errorMsg}");
                 break;
             case ErrorType.Critical     :
-                Debug.Log("Critical: ${errorCode}: ${errorMsg}");
+                Debug.Log($"Critical: {errorCode}: {errorMsg}");
                 break;
             case ErrorType.Abend        :
-                Debug.Log("ABNORMAL END: ${errorCode}: ${errorMsg}");
+                Debug.Log($"ABNORMAL END: {errorCode}: {errorMsg}");
                 break;
             default:
                 break;
         }
     }
+
 
     
     /* TODO review this approach and cleanup 

@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
+  - Friendly
+  - ContactPoint
+  - PieceSet
+  - Piece00
+  - Piece01
+  - SceneEnvironmentVars
   layers:
   - Default
   - TransparentFX
