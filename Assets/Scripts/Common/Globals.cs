@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public static class Globals // : MonoBehaviour  // static -> doesn't derive from MonoBehaviour
 {
     // enums 
@@ -19,7 +20,8 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
     public enum ErrorType       { Warning       , Actionable, Critical  , Abend         }
     public enum MovementType    { Default       , IntegerSteps                          }
     public enum ProjectionType  { Perspective   , Orthogonal                            }
-
+    public enum Axis            { x = 0         , y         , z                         }
+    
     public const int ERROR_CODE_NO_SCENE_TYPE           = 101 ;
     public const int ERROR_CODE_PIECES_IDENTIFICATION   = 201 ;
 
@@ -27,7 +29,7 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
 
     // global data definition
     public static int currentScene                      = 0 ;                   // current scene's build index
-    public static int amblyopicEye {get; internal set;} = 0 ;                   // 0 = Left | 1 = right
+    public static int amblyopicEye {get; internal set;} = 1 ;                   // 0 = Left | 1 = right
 
     // tracking settings
     public static SceneType CurrentSceneType            = SceneType.Invalid ;   // flag to mark scene type (e.g., to be used in time tracking)
@@ -53,6 +55,7 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
         currentScene  = nextLevel;
         SceneManager.LoadScene(nextLevel);
     }
+
     public static void ReloadLevel(){
         int thisScene = SceneManager.GetActiveScene().buildIndex;               // get current scene build index
         currentScene  = thisScene;                                              // overkill...
