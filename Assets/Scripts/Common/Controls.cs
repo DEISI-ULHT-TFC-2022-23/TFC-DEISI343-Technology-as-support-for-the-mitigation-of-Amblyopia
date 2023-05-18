@@ -25,19 +25,20 @@ using static GamepadUtils;
 
 public static class Controls
 {
-
     public static Vector3 HandleAxisInput(){
         Vector3 movementVector = new Vector3( 0, 0, 0 );
-        if (Input.GetKey (KeyCode.LeftArrow)    || GamepadUtils.isButtonPressed("Left") )   { movementVector[0] = -1 ; }
-        if (Input.GetKey (KeyCode.UpArrow)      || GamepadUtils.isButtonPressed("Up") )     { movementVector[1] =  1 ; }
-        if (Input.GetKey (KeyCode.RightArrow)   || GamepadUtils.isButtonPressed("Right") )  { movementVector[0] =  1 ; }
-        if (Input.GetKey (KeyCode.DownArrow)    || GamepadUtils.isButtonPressed("Down") )   { movementVector[1] = -1 ; }
+
+        // if preference goes to gamepad boolean function, then use -> GamepadUtils.isButtonPressed("D-Pad Up") 
+        if (Input.GetKey (KeyCode.LeftArrow)    || GamepadUtils.ButtonValue("Left")     != 0f )  { movementVector[0] = -1 ; }
+        if (Input.GetKey (KeyCode.UpArrow)      || GamepadUtils.ButtonValue("Up")       != 0f )  { movementVector[1] =  1 ; }
+        if (Input.GetKey (KeyCode.RightArrow)   || GamepadUtils.ButtonValue("Right")    != 0f )  { movementVector[0] =  1 ; }
+        if (Input.GetKey (KeyCode.DownArrow)    || GamepadUtils.ButtonValue("Down")     != 0f )  { movementVector[1] = -1 ; }
 
         
-        if (Input.GetKeyUp (KeyCode.LeftArrow)  && !GamepadUtils.isButtonPressed("Left") )  { movementVector[0] =  0 ; }
-        if (Input.GetKeyUp (KeyCode.UpArrow)    && !GamepadUtils.isButtonPressed("Up") )    { movementVector[1] =  0 ; }
-        if (Input.GetKeyUp (KeyCode.RightArrow) && !GamepadUtils.isButtonPressed("Right") ) { movementVector[0] =  0 ; }
-        if (Input.GetKeyUp (KeyCode.DownArrow)  && !GamepadUtils.isButtonPressed("Down") )  { movementVector[1] =  0 ; }
+        if (Input.GetKeyUp (KeyCode.LeftArrow)  && GamepadUtils.ButtonValue("Left")     == 0f )  { movementVector[0] =  0 ; }
+        if (Input.GetKeyUp (KeyCode.UpArrow)    && GamepadUtils.ButtonValue("Up")       == 0f )  { movementVector[1] =  0 ; }
+        if (Input.GetKeyUp (KeyCode.RightArrow) && GamepadUtils.ButtonValue("Right")    == 0f )  { movementVector[0] =  0 ; }
+        if (Input.GetKeyUp (KeyCode.DownArrow)  && GamepadUtils.ButtonValue("Down")     == 0f )  { movementVector[1] =  0 ; }
 
         return movementVector;
     }

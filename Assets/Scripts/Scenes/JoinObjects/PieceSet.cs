@@ -1,17 +1,19 @@
 /*
     PieceSet levels are chalenges where users must join piece sets in a defined
     position configuration. Once the level is loaded, this script will:
-        a) list pieces & identify each one's specific ContactPoint  (may evolve 
-           managing multiple contact points per piece)
-        b) ContactPoint: a specific prism in the  environment with minimal mass
-           to establish a contact coordinate for that specific piece
-        c) on every frame, the level will assess all piece's  ContactPoints are
-           within a 3 dimentional distance  from each other. The  distance must
-           be within precision setting for each of the  axis (not the euclidean
-           distance)
-        d) piece  grouping must have assigned  tag "PieceSet". Always, Leftmost 
-           piece must have tag "Piece00" and rightmost with  tag "Piece01" (the 
-           latter depending on th existance of only 2 pieces)
+        a)  list pieces & identify each one's specific ContactPoint  (may evolve 
+            managing multiple contact points per piece)
+        b)  ContactPoint: a specific prism in the  environment with minimal mass
+            to establish a contact coordinate for that specific piece
+        c)  on every frame, the level will assess all piece's  ContactPoints are
+            within a 3 dimentional distance  from each other. The  distance must
+            be within precision setting for each of the  axis (not the euclidean
+            distance)
+        d)  piece  grouping must have assigned  tag "PieceSet". Always, Leftmost 
+            piece must have tag "Piece00" and rightmost with  tag "Piece01" (the 
+            latter depending on th existance of only 2 pieces)
+        e)  proximity precision is calculated taking in account "bounds" size of
+            first piece. For this, piece (or pieces) must have a collider 
 
     Depending on the Amblyopic eye setting (left or right eye), this class must
     be able to adjust:
@@ -21,7 +23,6 @@
         4. calculate 3 axis distances and check them against config precision
 
 */
-
 
 using System.Collections;
 using System.Collections.Generic;
@@ -56,7 +57,6 @@ public class PieceSet : MonoBehaviour
     void Update()
     {
         FinalPositionReached();
-        
     }
 
     void getContactPoints(){
@@ -92,6 +92,7 @@ public class PieceSet : MonoBehaviour
     }
 
     Vector3 DefineTargetDistances(){
+        // target distances (precision), depend on first piece's collider box size (bounds)
         return 
             Vector3.forward * /* lvl.axisMovFreedom[2] * */ lvl.precision * bounds.size.z +
             Vector3.up      * /* lvl.axisMovFreedom[1] * */ lvl.precision * bounds.size.y + 
@@ -101,10 +102,12 @@ public class PieceSet : MonoBehaviour
     // detect if pieces are close enough in all 3 axis
     // based on level defined precision
     bool FinalPositionReached(){
+        // target distances (precision), depend on first piece's collider box size (bounds)
         // check if moving object's center is within reach of the target object
         if ( Mathf.Abs( rbContactPoints[0].position.y - rbContactPoints[1].position.y ) < targetDistances.y && 
              Mathf.Abs( rbContactPoints[0].position.x - rbContactPoints[1].position.x ) < targetDistances.x &&
              Mathf.Abs( rbContactPoints[0].position.z - rbContactPoints[1].position.z ) < targetDistances.z ){  
+                Debug.Log("Completo...!!");
                 lvl.Complete();                                                 // set level to complete
                 return true;
              } 

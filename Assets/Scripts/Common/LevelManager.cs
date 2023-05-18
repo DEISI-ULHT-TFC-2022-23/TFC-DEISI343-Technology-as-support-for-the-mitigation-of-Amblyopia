@@ -24,16 +24,18 @@ public static class LevelManager
     public static int      difficulty       {get; internal set;}    = 1     ;   // level difficulty
     public static float    speed            {get; internal set;}    = 1f    ;   // level speed (0: stopped < slower < 1: normal < faster )
     public static float    rotationSpeed    {get; internal set;}    = 1f    ;   // level rotation speed
-    public static float    precision        {get; internal set;}    = 0.02f ;
+    public static float    precision        {get; internal set;}    = 0.05f ;
 
     public static void LevelSetup(){                                            // should act as a "constructor" to set level conditions
         // set different level specs (difficulty, speed, etc)
+        GamepadUtils.Init();
     }
 
     public static void LevelInit(){
         levelStarted    = false ;
         levelCompleted  = false ;
         levelPaused     = false ;
+        GamepadUtils.Init();
     }
 
     public static void LevelStart(){
