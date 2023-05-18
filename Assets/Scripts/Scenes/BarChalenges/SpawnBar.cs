@@ -27,7 +27,7 @@ public class SpawnBar : MonoBehaviour
         bar                 = new GameObject[vars.numObjects]               ;   // array of objects
 
         for (int i = 0; i < vars.numObjects; i++){
-            bar[i] = Instantiate(spawnBar, SpawnPosition(vars.center, vars.numObjects, i), vars.GetRotation(), transform);
+            bar[i] = Instantiate(spawnBar, SpawnPosition(vars.center, vars.numObjects, i), vars.GetRotation()); //, transform);
             
             Renderer renderer       = bar[i].GetComponent<Renderer>()       ;   // get gameobject's renderer
             Material uniqueMaterial = renderer.material                     ;   // get gameobject's material

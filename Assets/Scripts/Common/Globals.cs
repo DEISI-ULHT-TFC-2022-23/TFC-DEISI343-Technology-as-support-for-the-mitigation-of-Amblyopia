@@ -53,13 +53,15 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
         int nextLevel = ( SceneManager.GetActiveScene().buildIndex + 1 ) 
                         % SceneManager.sceneCountInBuildSettings;               // get next scene sequencially in a circular approach (from last back to firt level) 
         currentScene  = nextLevel;
-        SceneManager.LoadScene(nextLevel);
+        //int previousScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(nextLevel); //, LoadSceneMode.Single);
+        //SceneManager.UnloadSceneAsync(previousScene);
     }
 
     public static void ReloadLevel(){
         int thisScene = SceneManager.GetActiveScene().buildIndex;               // get current scene build index
         currentScene  = thisScene;                                              // overkill...
-        SceneManager.LoadScene(thisScene);                                      // reload current scene
+        SceneManager.LoadScene(thisScene, LoadSceneMode.Single);                // reload current scene
     }
 
     public static void SetAmblyopicEye(int eye){

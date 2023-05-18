@@ -121,7 +121,7 @@ public static class GamepadUtils
     // return boolean value if a button is pressed
     public static bool isButtonPressed(string action){
         if (! gamepadAvailable ) return false;                                  // exit if no gamepad is present
-        Debug.Log(GamepadButtonsPressedNames());
+        //Debug.Log(GamepadButtonsPressedNames());
         if (GamepadButtonsPressedNameList().Contains( action )){
             Debug.Log(action + " was pressed!!");
         }

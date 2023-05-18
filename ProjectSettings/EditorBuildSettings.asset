@@ -21,11 +21,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 02 - OverlapObjects.unity
     guid: 3296db95652eb194b8f047bcdd8ed8dd
   - enabled: 1
-    path: Assets/Scenes/Level 03 - Join Objects.unity
+    path: Assets/Scenes/Level 03 - Join Objects 01.unity
     guid: a00e8f98f02c5e34da7a1dedb944e7a2
   - enabled: 1
-    path: Assets/Scenes/Level 10 - Tetris.unity
-    guid: 505e9f4b778102741ac7eb07b106c23a
+    path: Assets/Scenes/Level 03 - Join Objects 02.unity
+    guid: 8ec5f11a7c80b1041aaaadf3eb89af48
+  - enabled: 1
+    path: Assets/Scenes/Level 03 - Join Objects 03.unity
+    guid: d9cc9785acb48d94d905b376b1d6fa12
+  - enabled: 1
+    path: Assets/Scenes/Level 03 - Join Objects 04.unity
+    guid: 294fb2ea9dcfed14e90a63717db7bde0
   - enabled: 1
     path: Assets/Scenes/Level 20 - Rocket Simple FlyOver.unity
     guid: 2127e633c59b99f40b844def315c4846
