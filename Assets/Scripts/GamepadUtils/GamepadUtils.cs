@@ -83,6 +83,8 @@ public static class GamepadUtils
                         //    action    |  axisType  |  physical button     | physical stick
                         {   "MainSelect", (  BUTTON , gamepad.buttonSouth   , null                  ) },
                         {    "AltSelect", (  BUTTON , gamepad.buttonEast    , null                  ) },
+                        {       "Action", (  BUTTON , gamepad.buttonWest    , null                  ) },
+                        {    "AltAction", (  BUTTON , gamepad.buttonNorth   , null                  ) },
                         {           "Up", (  BUTTON , gamepad.dpad.up       , null                  ) },
                         {         "Down", (  BUTTON , gamepad.dpad.down     , null                  ) },
                         {        "Right", (  BUTTON , gamepad.dpad.right    , null                  ) },

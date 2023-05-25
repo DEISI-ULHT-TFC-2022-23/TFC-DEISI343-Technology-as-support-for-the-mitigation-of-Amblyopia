@@ -35,8 +35,9 @@ public class SceneEnvironmentVariables : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Globals.SetSceneType(sceneType);                                        // adjust scene tracking global setting
-        lvl.LevelInit();                                                        // Initialize level
+        GamepadUtils.Init()             ;
+        Globals.SetSceneType(sceneType) ;                                       // adjust scene tracking global setting
+        lvl.LevelInit()                 ;                                       // Initialize level
 
         // potencially present a "click to start" message
 
