@@ -88,7 +88,12 @@ public static class GamepadUtils
                         {        "Right", (  BUTTON , gamepad.dpad.right    , null                  ) },
                         {         "Left", (  BUTTON , gamepad.dpad.left     , null                  ) },
                         {   "Accelerate", (  BUTTON , gamepad.rightTrigger  , null                  ) },
-                        {         "Look", (   STICK , null                  , gamepad.leftStick.x   ) },
+                        {       "Select", (  BUTTON , gamepad.selectButton  , null                  ) },
+                        {        "Start", (  BUTTON , gamepad.startButton   , null                  ) },
+                        {        "MoveX", (   STICK , null                  , gamepad.leftStick.x   ) },
+                        {        "MoveY", (   STICK , null                  , gamepad.leftStick.y   ) },
+                        {        "LookX", (   STICK , null                  , gamepad.rightStick.x  ) },
+                        {        "LookY", (   STICK , null                  , gamepad.rightStick.y  ) },
         };
         gamepadAvailablePrev = true;
     }
