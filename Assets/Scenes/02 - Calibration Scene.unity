@@ -233,6 +233,10 @@ PrefabInstance:
       propertyPath: _LookAtObject
       value: 
       objectReference: {fileID: 6539530786280215987}
+    - target: {fileID: 411516292337339030, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: CalibrationMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 820443585568557685, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.005

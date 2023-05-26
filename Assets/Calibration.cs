@@ -4,7 +4,8 @@ using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 
-using static GamepadUtils;
+using static GamepadUtils   ;
+using static Globals        ;
 
 public class Calibration : MonoBehaviour
 {
@@ -25,9 +26,13 @@ public class Calibration : MonoBehaviour
 
     [SerializeField] public  bool       CalibrationMode         = false ;
 
-    [SerializeField] private CalibrationType _calibrationType   = CalibrationType.ConvergencePoint;
+    [SerializeField] private CalibrationType _calibrationType   = CalibrationType.Offset;
 
-    enum CalibrationType { ConvergencePoint, CameraDistance}
+    [SerializeField] private Vector3    _focalOffset                    ;
+    [SerializeField] private Vector3    _focalOffsetSimetryFactor       ;
+
+
+    enum CalibrationType { ConvergencePoint, CameraDistance, Offset}
     
     private void Awake()
     {
@@ -79,6 +84,24 @@ public class Calibration : MonoBehaviour
         }
     }
 
+    // apply an offset to a transform
+    // to be used on eye cameras to offset focal point (away from nasal position -> skweeing image towards nasal position)
+    // => "symetry" will apply only for Symetry vector components with -1, while 1 values will keep position
+    //          Example: Symetry = (-1, 1, 1 ) will only "invert" x offset (make sens between left and right eyes)
+    // => right side eye will not apply Symetry vector (will keep current offset by applying a symetry vector of (1, 1, 1)
+    Vector3 CameraOffset(Vector3 TargetObjectPosition, Vector3 Offset, Vector3 Simetry, Side side){
+        Vector3 _simetry = side == Side.Right ? Vector3.one : Simetry;                      // calc "symetry", based on side
+        Vector3 _offsetted = TargetObjectPosition;
+        
+        Debug.Log("offset: " + Vector3.Scale(Offset, _simetry));
+        Debug.Log("Position -> before: " + _offsetted);
+        _offsetted += Vector3.Scale(Offset, _simetry);
+        Debug.Log("Position -> after: " + _offsetted);
+
+        
+        return _offsetted;
+    }
+
 
     void CalibrateCameras()
     {
@@ -91,7 +114,7 @@ public class Calibration : MonoBehaviour
         if (_calibrationType == CalibrationType.ConvergencePoint)   _lookAt = _LookAtPosition   ;
         else                                                        _lookAt = _LookAtObject     ;
 
-        // claculate eye separation
+        // calculate eye separation
         _eyeSeparation += ButtonValue("Right") * _CalibrationSpeed / 2;
         _eyeSeparation += (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) * _CalibrationSpeed / 2;
          
@@ -118,6 +141,19 @@ public class Calibration : MonoBehaviour
         {
             _EyeLeft.transform.Translate ( new Vector3(0, 0, _convergenceOffset)); // Cameras: Left Eye
             _EyeRight.transform.Translate( new Vector3(0, 0, _convergenceOffset)); // Cameras: Right Eye
+        }
+        else if (_calibrationType == CalibrationType.Offset){
+            var _offsettedRight = CameraOffset(_lookAt.position, _focalOffset, _focalOffsetSimetryFactor, Side.Right);
+            var _offsettedLeft  = CameraOffset(_lookAt.position, _focalOffset, _focalOffsetSimetryFactor, Side.Left);
+
+            // place cameras at the same position of the object
+            _EyeRight.position = new Vector3(_offsettedRight.x, _offsettedRight.y, _EyeRight.position.z);
+            _EyeLeft.position  = new Vector3(_offsettedLeft.x , _offsettedLeft.y , _EyeLeft.position.z );
+
+            // direct gaze towards offsetted object
+            _EyeRight.LookAt(_offsettedRight);
+            _EyeLeft.LookAt (_offsettedLeft );
+            return;
         }
         
         _EyeLeft.LookAt(_lookAt);
