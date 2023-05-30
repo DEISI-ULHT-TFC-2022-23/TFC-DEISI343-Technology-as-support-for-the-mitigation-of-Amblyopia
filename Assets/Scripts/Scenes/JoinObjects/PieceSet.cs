@@ -1,7 +1,7 @@
 /*
-    PieceSet levels are chalenges where users must join piece sets in a defined
+    PieceSet levels are challenges where users must join piece sets in a defined
     position configuration. Once the level is loaded, this script will:
-        a)  list pieces & identify each one's specific ContactPoint  (may evolve 
+        a)  list pieces & identify each one's specific ContactPoint  (may evolve
             managing multiple contact points per piece)
         b)  ContactPoint: a specific prism in the  environment with minimal mass
             to establish a contact coordinate for that specific piece

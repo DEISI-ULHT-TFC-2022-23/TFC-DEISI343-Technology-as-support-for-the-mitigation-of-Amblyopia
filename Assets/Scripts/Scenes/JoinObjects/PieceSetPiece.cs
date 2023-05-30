@@ -35,7 +35,7 @@ public class PieceSetPiece : MonoBehaviour
 
     public void SetCullingLayerMask( int side, int eye){
         // requires movingPiece value already set
-        //gameObject.layer = Globals.GetCullingLayerMask( (Side) side , (Side) eye);
+        if (rb.isKinematic) return;
         gameObject.SetLayer( GetCullingLayerMask( (Side) side , (Side) eye) ); // applyes to all children
     }
 

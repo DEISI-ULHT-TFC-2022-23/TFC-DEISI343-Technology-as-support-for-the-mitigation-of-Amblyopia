@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/02 - Calibration Scene.unity
+- path: Assets/Scenes/Level 23 - Rocket Fly - Obstacle race.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

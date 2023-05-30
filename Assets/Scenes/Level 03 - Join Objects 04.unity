@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 6539530786280215986}
-  m_IndirectSpecularColor: {r: 0.0009160945, g: 0.0011005473, b: 0.0015747846, a: 1}
+  m_IndirectSpecularColor: {r: 0.00091609656, g: 0.0011005495, b: 0.0015747885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,6 +187,11 @@ PrefabInstance:
 --- !u!4 &500507717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 883419509790103109, guid: 6d7b8c00396975642988b857c56abfcb, type: 3}
+  m_PrefabInstance: {fileID: 500507716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &500507718 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7396175806185261282, guid: 6d7b8c00396975642988b857c56abfcb, type: 3}
   m_PrefabInstance: {fileID: 500507716}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &579967276
@@ -353,6 +358,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 411516292337339030, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: _LookAtObject
+      value: 
+      objectReference: {fileID: 500507718}
     - target: {fileID: 3922209804150149935, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -448,6 +457,14 @@ PrefabInstance:
     - target: {fileID: 6539530786062217431, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539530786375578890, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539530787570309593, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.5
       objectReference: {fileID: 0}
     - target: {fileID: 6841850766906762835, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: m_AnchorMax.y

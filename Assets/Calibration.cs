@@ -80,7 +80,7 @@ public class Calibration : MonoBehaviour
                 (Input.GetKey(KeyCode.LeftShift)) && 
                 (Input.GetKeyDown(KeyCode.W)) ))
         {
-            _calibrationType =  (CalibrationType) ( ( (int) _calibrationType + 1 ) % 2 );
+            _calibrationType =  (CalibrationType) ( ( (int) _calibrationType + 1 ) % 3 );
         }
     }
 
