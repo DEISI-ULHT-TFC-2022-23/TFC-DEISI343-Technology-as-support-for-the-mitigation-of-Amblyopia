@@ -360,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 950814939}
     - target: {fileID: 411516292337339030, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: CalibrationMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3922209804150149935, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: m_AnchorMax.y

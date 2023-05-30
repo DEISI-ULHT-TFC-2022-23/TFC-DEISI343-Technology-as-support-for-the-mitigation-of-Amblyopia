@@ -93,10 +93,10 @@ public class Calibration : MonoBehaviour
         Vector3 _simetry = side == Side.Right ? Vector3.one : Simetry;                      // calc "symetry", based on side
         Vector3 _offsetted = TargetObjectPosition;
         
-        Debug.Log("offset: " + Vector3.Scale(Offset, _simetry));
-        Debug.Log("Position -> before: " + _offsetted);
+        //Debug.Log("offset: " + Vector3.Scale(Offset, _simetry));
+        //Debug.Log("Position -> before: " + _offsetted);
         _offsetted += Vector3.Scale(Offset, _simetry);
-        Debug.Log("Position -> after: " + _offsetted);
+        //Debug.Log("Position -> after: " + _offsetted);
 
         
         return _offsetted;

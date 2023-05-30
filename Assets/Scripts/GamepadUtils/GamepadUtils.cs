@@ -14,9 +14,15 @@ using UnityEngine.InputSystem.Controls;
 public static class GamepadUtils
 {
     [SerializeField] 
-    const   int     GAMEPAD_MAX_BUTTONS_AXIS = 16       ;
-    const   string  BUTTON                   = "Button" ;
-    const   string  STICK                    = "Stick"  ;
+    const   int     GAMEPAD_MAX_BUTTONS_AXIS    = 16           ;
+    const   string  BUTTON                      = "Button"     ;
+    const   string  STICK                       = "Stick"      ;
+
+    public const   string  BTN_UP               = "Up"         ;
+    public const   string  BTN_DOWN             = "Down"       ;
+    public const   string  BTN_LEFT             = "Left"       ;
+    public const   string  BTN_RIGHT            = "Right"      ;
+    public const   string  BTN_SOUTH            = "MainSelect" ;
 
     public  static  string          gamepads = string.Join("\n", Gamepad.all);
     public  static  Gamepad         gamepad             ;
@@ -80,15 +86,15 @@ public static class GamepadUtils
                         };
 
         actionBindings = new Dictionary<string, (string, ButtonControl, AxisControl)>{  // bind functional actions to physical buttons/sticks (keymapping)
-                        //    action    |  axisType  |  physical button     | physical stick
-                        {   "MainSelect", (  BUTTON , gamepad.buttonSouth   , null                  ) },
+                        //    action    |  axisType |   physical button     | physical stick
+                        {      BTN_SOUTH, (  BUTTON , gamepad.buttonSouth   , null                  ) },
                         {    "AltSelect", (  BUTTON , gamepad.buttonEast    , null                  ) },
                         {       "Action", (  BUTTON , gamepad.buttonWest    , null                  ) },
                         {    "AltAction", (  BUTTON , gamepad.buttonNorth   , null                  ) },
-                        {           "Up", (  BUTTON , gamepad.dpad.up       , null                  ) },
-                        {         "Down", (  BUTTON , gamepad.dpad.down     , null                  ) },
-                        {        "Right", (  BUTTON , gamepad.dpad.right    , null                  ) },
-                        {         "Left", (  BUTTON , gamepad.dpad.left     , null                  ) },
+                        {         BTN_UP, (  BUTTON , gamepad.dpad.up       , null                  ) },
+                        {       BTN_DOWN, (  BUTTON , gamepad.dpad.down     , null                  ) },
+                        {      BTN_RIGHT, (  BUTTON , gamepad.dpad.right    , null                  ) },
+                        {       BTN_LEFT, (  BUTTON , gamepad.dpad.left     , null                  ) },
                         {   "Accelerate", (  BUTTON , gamepad.rightTrigger  , null                  ) },
                         {       "Select", (  BUTTON , gamepad.selectButton  , null                  ) },
                         {        "Start", (  BUTTON , gamepad.startButton   , null                  ) },
@@ -109,13 +115,13 @@ public static class GamepadUtils
 
     // return a string with the names of all buttons being pressed
     public static string GamepadButtonsPressedNames(){
-        if (! gamepadAvailable ) return "";                                      // exit if no gamepad is present
+        if (! gamepadAvailable ) return "";                                     // exit if no gamepad is present
         return string.Join("\n", GamepadButtonsPressed().Select(x => x.displayName));
     }
 
     // return a list of  names of all buttons being pressed
     public static IEnumerable<string> GamepadButtonsPressedNameList(){
-        if (! gamepadAvailable ) return null;                                      // exit if no gamepad is present
+        if (! gamepadAvailable ) return null;                                   // exit if no gamepad is present
         return GamepadButtonsPressed().Select(x => x.displayName); 
     }
 
@@ -128,10 +134,6 @@ public static class GamepadUtils
     // return boolean value if a button is pressed
     public static bool isButtonPressed(string action){
         if (! gamepadAvailable ) return false;                                  // exit if no gamepad is present
-        //Debug.Log(GamepadButtonsPressedNames());
-        if (GamepadButtonsPressedNameList().Contains( action )){
-            Debug.Log(action + " was pressed!!");
-        }
         return GamepadButtonsPressedNameList().Contains( action );
     }
 

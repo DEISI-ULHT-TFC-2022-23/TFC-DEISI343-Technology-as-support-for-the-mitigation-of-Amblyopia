@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static GamepadUtils;
+
 public class Movement : MonoBehaviour
 {
     [SerializeField] float rocketThrustForce = 10f;
@@ -33,7 +35,8 @@ public class Movement : MonoBehaviour
     }
 
     void ProcessThrust(){
-        if (Input.GetAxis("Fire1") == 1 || Input.GetAxis("Jump") == 1) {
+        //if (Input.GetAxis("Fire1") == 1 || Input.GetAxis("Jump") == 1) {
+        if (ButtonValue(BTN_SOUTH) == 1 || Input.GetAxis("Jump") == 1){
             StartThrusting();
         } else {
             StopThrusting();
@@ -42,9 +45,9 @@ public class Movement : MonoBehaviour
     }
     
     void ProcessRotation(){
-        if (Input.GetKey(KeyCode.D)) {
+        if (ButtonValue(BTN_RIGHT) == 1 || Input.GetKey(KeyCode.D)) {
             RotateRight();
-        } else if (Input.GetKey(KeyCode.A)) {
+        } else if (ButtonValue(BTN_LEFT) == 1 || Input.GetKey(KeyCode.A)) {
             RotateLeft();
         } else {
             StopRotating();
@@ -55,7 +58,7 @@ public class Movement : MonoBehaviour
     {
         if (!mainEngineParticles.isPlaying) mainEngineParticles.Play();
         if (!audiosource.isPlaying) audiosource.PlayOneShot(mainEngineSound);
-        rb.AddRelativeForce(Vector3.up * rocketThrustForce * Time.deltaTime * Mathf.Max(Input.GetAxis("Fire1"), Input.GetAxis("Jump")));
+        rb.AddRelativeForce(Vector3.up * rocketThrustForce * Time.deltaTime * Mathf.Max(ButtonValue(BTN_SOUTH), Input.GetAxis("Jump")));
     }
     
     void StopThrusting()

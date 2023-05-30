@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 6539530786280215986}
-  m_IndirectSpecularColor: {r: 0.0009160945, g: 0.0011005473, b: 0.0015747846, a: 1}
+  m_IndirectSpecularColor: {r: 0.00091609656, g: 0.0011005495, b: 0.0015747885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,6 +217,10 @@ PrefabInstance:
       value: PrismCylinder
       objectReference: {fileID: 0}
     - target: {fileID: 94499491285360853, guid: 46e288269f81be64da5c673b8ee6093b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 94499491285360853, guid: 46e288269f81be64da5c673b8ee6093b, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -354,6 +358,10 @@ PrefabInstance:
       propertyPath: targetRb
       value: 
       objectReference: {fileID: 435239042}
+    - target: {fileID: 1186090270, guid: 27f53bd3db4789d429402afffc267332, type: 3}
+      propertyPath: movementFactor
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 502812720198668178, guid: 27f53bd3db4789d429402afffc267332, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -402,6 +410,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrismStared
       objectReference: {fileID: 0}
+    - target: {fileID: 1753251456864584508, guid: 27f53bd3db4789d429402afffc267332, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731428985889444265, guid: 27f53bd3db4789d429402afffc267332, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238171750790419373, guid: 27f53bd3db4789d429402afffc267332, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27f53bd3db4789d429402afffc267332, type: 3}
 --- !u!1001 &6539530786280215985
@@ -431,6 +451,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 411516292337339030, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: _LookAtObject
+      value: 
+      objectReference: {fileID: 154703209}
     - target: {fileID: 1772163547654565226, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: ProjectionType
       value: 0

@@ -12,7 +12,7 @@ public class EyesInputHandler : MonoBehaviour
              Input.GetKey(KeyCode.RightControl )    ) &&
             (Input.GetKey(KeyCode.LeftShift    ) || 
              Input.GetKey(KeyCode.RightShift   )    ) &&
-             Input.GetKeyDown(KeyCode.Space         )    
+             Input.GetKeyDown(KeyCode.C         )    
              ||
              ((ButtonValue("Select") != 0 && ButtonValue("Action") != 0))
              )
