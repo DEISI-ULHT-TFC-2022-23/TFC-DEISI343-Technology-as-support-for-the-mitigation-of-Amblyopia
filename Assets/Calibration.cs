@@ -147,8 +147,8 @@ public class Calibration : MonoBehaviour
             var _offsettedLeft  = CameraOffset(_lookAt.position, _focalOffset, _focalOffsetSimetryFactor, Side.Left);
 
             // place cameras at the same position of the object
-            _EyeRight.position = new Vector3(_offsettedRight.x, _offsettedRight.y, _EyeRight.position.z);
-            _EyeLeft.position  = new Vector3(_offsettedLeft.x , _offsettedLeft.y , _EyeLeft.position.z );
+            _EyeRight.position = new Vector3(_offsettedRight.x, _offsettedRight.y, _EyeRight.position.z );
+            _EyeLeft.position  = new Vector3(_offsettedLeft.x , _offsettedLeft.y , _EyeLeft.position.z  );
 
             // direct gaze towards offsetted object
             _EyeRight.LookAt(_offsettedRight);
