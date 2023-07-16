@@ -35,6 +35,22 @@ MonoBehaviour:
     m_Key: RIGHT_EYE_BUTTON
     m_Metadata:
       m_Items: []
+  - m_Id: 50434427345027072
+    m_Key: Menu_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50435890444091392
+    m_Key: Menu_Option_00
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50436032765214720
+    m_Key: Menu_Option_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50436520457912320
+    m_Key: Menu_Option_02
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

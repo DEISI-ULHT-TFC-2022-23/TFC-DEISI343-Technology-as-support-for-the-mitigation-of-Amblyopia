@@ -38,6 +38,22 @@ MonoBehaviour:
     m_Localized: Olho Direito
     m_Metadata:
       m_Items: []
+  - m_Id: 50434427345027072
+    m_Localized: "Op\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50435890444091392
+    m_Localized: Calibrar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50436032765214720
+    m_Localized: "Definir Olho Ambl\xEDope"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50436520457912320
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

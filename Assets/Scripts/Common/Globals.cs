@@ -38,6 +38,9 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
     public const int CullingMaskDominantEyeLayerBit     = 10 ;                  // bitwize value of dominant eye's layer
     public const int CullingMaskWeakerEyeLayerBit       = 11 ;                  // bitwize value of weaker   eye's layer
     public const int CullingMaskDefaultLayerBit         =  0 ;                  // bitwize value of default  eye's layer
+    
+    public const int CullingMaskRightCameraBit          = 13 ;                  // bitwize value for Left Camera
+    public const int CullingMaskLeftCameraBit           = 14 ;                  // bitwize value for Right Camera
 
     public const int CullingMaskDominantEye             = (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskDominantEyeLayerBit)  ; // Dominant Eye's culling mask
     public const int CullingMaskWeakerEye               = (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskWeakerEyeLayerBit)    ; // Weaker Eye's culling mask

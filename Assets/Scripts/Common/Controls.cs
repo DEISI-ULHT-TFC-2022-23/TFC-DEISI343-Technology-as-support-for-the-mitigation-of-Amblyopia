@@ -25,6 +25,8 @@ using static GamepadUtils;
 
 public static class Controls
 {
+    static bool menuButtonPressed = false;
+    
     public static Vector3 HandleAxisInput(){
         Vector3 movementVector = new Vector3( 0, 0, 0 );
 
@@ -41,5 +43,18 @@ public static class Controls
         if (Input.GetKeyUp (KeyCode.DownArrow)  && GamepadUtils.ButtonValue("Down")     == 0f )  { movementVector[1] =  0 ; }
 
         return movementVector;
+    }
+
+    public static int MenuKeys(){
+        int result = 0;
+        if (Input.GetKeyUp (KeyCode.DownArrow)    || GamepadUtils.ButtonValue(BTN_DOWN)   != 0f )  { result =  1 ; }
+        if (Input.GetKeyUp (KeyCode.UpArrow)      || GamepadUtils.ButtonValue(BTN_UP)     != 0f )  { result = -1 ; }
+        if (Input.GetKeyUp (KeyCode.Return)       || GamepadUtils.ButtonValue(BTN_SOUTH)  != 0f )  { result =  2 ; }
+
+        if      ( menuButtonPressed && result == 0){ menuButtonPressed = false; return result;}
+        else if ( menuButtonPressed) {return 0;}
+        else if ( result != 0) {menuButtonPressed = true; return result; }
+        menuButtonPressed = false;
+        return result;
     }
 }

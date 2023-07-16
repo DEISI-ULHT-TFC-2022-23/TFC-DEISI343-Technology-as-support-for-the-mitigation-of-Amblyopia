@@ -38,6 +38,22 @@ MonoBehaviour:
     m_Localized: Right Eye
     m_Metadata:
       m_Items: []
+  - m_Id: 50434427345027072
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50435890444091392
+    m_Localized: Calibrate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50436032765214720
+    m_Localized: Set Amblyopic Eye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50436520457912320
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

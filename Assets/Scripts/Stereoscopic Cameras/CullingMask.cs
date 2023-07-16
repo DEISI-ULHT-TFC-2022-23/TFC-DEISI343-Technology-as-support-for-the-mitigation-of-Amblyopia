@@ -24,6 +24,7 @@ public class CullingMask : MonoBehaviour
 
     void setCullingMask(){
         cm.cullingMask =  Globals.GetCullingMask( (Side)CameraID, (Side)amblyopicEye);
+        cm.cullingMask += (1 << (Globals.CullingMaskLeftCameraBit -1 + CameraID) );    // Only left camera layer (13) + CameraID (left:0, right: 1)
         ClearCullingMaskUpdateFlag(CameraID);
 
         // Debug.Log(CameraID + ": " + cm.cullingMask);
